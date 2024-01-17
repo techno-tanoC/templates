@@ -1,4 +1,4 @@
-FROM rust:1.75.0-slim
+FROM rust:slim
 WORKDIR /workspace
 
 RUN <<EOF
