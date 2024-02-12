@@ -56,4 +56,4 @@ jobs:
 
       - name: clippy
         run: |
-          cargo clippy
+          cargo clippy --no-deps
