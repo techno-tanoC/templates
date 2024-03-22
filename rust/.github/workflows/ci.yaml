@@ -7,29 +7,6 @@ on:
   pull_request:
 
 jobs:
-  test:
-    name: Test
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Install stable rust
-        run: |
-          rustup default stable
-
-      - name: Rust Cache
-        uses: Swatinem/rust-cache@v2
-
-      - name: Build for Test
-        run: |
-          cargo build --tests
-
-      - name: Test
-        run: |
-          cargo test
-
   check:
     name: Check
     runs-on: ubuntu-latest
@@ -57,3 +34,26 @@ jobs:
       - name: clippy
         run: |
           cargo clippy --no-deps
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install stable rust
+        run: |
+          rustup default stable
+
+      - name: Rust Cache
+        uses: Swatinem/rust-cache@v2
+
+      - name: Build for Test
+        run: |
+          cargo build --tests
+
+      - name: Test
+        run: |
+          cargo test
