@@ -6,9 +6,9 @@ services:
     command: sleep infinity
     init: true
     volumes:
-      - ../:/workspace
-      - cargo:/usr/local/cargo
-      - target:/workspace/target
+      - ../:/workspace:delegated
+      - cargo:/usr/local/cargo:delegated
+      - target:/workspace/target:delegated
 
 volumes:
   cargo:
